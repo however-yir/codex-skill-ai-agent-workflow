@@ -1,5 +1,9 @@
 # ai-agent-workflow
 
+🔥 A Codex skill for building repeatable AI agent workflows with prompts, tools, and MCP integrations.  
+🚀 Designed for workflow decomposition, tool grounding, evaluation loops, and reusable execution specs.  
+⭐ Helps teams move from one-off prompts to production-minded agent systems.
+
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827?style=flat-square)](./SKILL.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](./LICENSE)
 [![Public Repo](https://img.shields.io/badge/Repo-Public-2563eb?style=flat-square)](https://github.com/however-yir/codex-skill-ai-agent-workflow)

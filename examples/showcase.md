@@ -2,11 +2,17 @@
 
 These examples are designed to show how this skill turns loose AI ideas into reusable systems instead of one-off prompts.
 
-## Example 1: Local LLM Research Pipeline
+They also make the routing boundary visible in a GitHub-friendly way:
+
+- use this skill after the stack direction is already mostly known
+- route local stack choice and hardware-fit questions to `local-ai-systems-studio`
+- route skill authoring and skill benchmarking requests to `skill-creator`
+
+## Example 1: Workflow Architecture After The Stack Is Chosen
 
 **Prompt**
 
-`Help me build a local workflow that reads PDFs, extracts key points, drafts a summary, and flags uncertain sections for review.`
+`I already decided to use OpenAI API and MCP for this document workflow. Help me structure the stages, tool calls, checks, and outputs so it becomes reusable.`
 
 **A strong output should include**
 
@@ -17,7 +23,12 @@ These examples are designed to show how this skill turns loose AI ideas into reu
 
 **Why this showcases the skill**
 
-It shows the skill can design repeatable AI workflows under practical local-model constraints.
+It shows the skill can design a repeatable AI workflow once the core stack decision is already made.
+
+**Route elsewhere if**
+
+- the user is still deciding between LM Studio, Ollama, MLX, GGUF, or hardware options
+- the main request is model/tool evaluation rather than workflow design
 
 ## Example 2: Skill vs Script vs MCP Decision
 
@@ -36,6 +47,12 @@ It shows the skill can design repeatable AI workflows under practical local-mode
 
 This is the kind of decision-oriented output that makes a workflow skill feel mature rather than merely descriptive.
 
+**Route elsewhere if**
+
+- the next concrete ask becomes `write the skill for me`
+- the user wants to benchmark or improve an existing skill description
+- the work is now primarily about the skill artifact, not the workflow decision
+
 ## Example 3: Agent Evaluation Loop
 
 **Prompt**
@@ -52,3 +69,8 @@ This is the kind of decision-oriented output that makes a workflow skill feel ma
 **Why this showcases the skill**
 
 It proves the skill is about system reliability, not just prompt writing.
+
+**Route elsewhere if**
+
+- the evaluation target is a skill package rather than an agent workflow
+- the user wants trigger-rate testing or skill-description optimization specifically

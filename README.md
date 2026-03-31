@@ -1,6 +1,10 @@
 # ai-agent-workflow
 
+[English](./README.md)
+
 > Repeatable AI workflows with prompts, tools, MCP integrations, and evaluation loops.
+
+中文简介：这是一个面向 AI 工作流设计的 Codex skill，适合把一次性提示词任务沉淀成可复用的 prompts、tools、MCP 集成和评测闭环。
 
 A Codex skill for turning one-off AI ideas into repeatable workflows with prompts, tools, MCP integrations, checks, and evaluation loops.
 

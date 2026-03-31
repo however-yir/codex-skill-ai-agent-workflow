@@ -6,11 +6,11 @@
 
 A Codex skill for turning one-off AI ideas into repeatable workflows with prompts, tools, MCP integrations, checks, and evaluation loops.
 
-Use this when the main stack direction is already mostly known. If the bigger question is still local model choice, deployment path, or LM Studio versus Ollama versus MLX, [local-ai-systems-studio](https://github.com/however-yir/codex-skill-local-ai-systems-studio) is the better first stop.
+Use this when the main stack direction is already mostly known. If the bigger question is still local model choice, deployment path, or LM Studio versus Ollama versus MLX, [local-ai-systems-studio](https://github.com/however-yir/codex-skill-local-ai-systems-studio) is the better first stop. If the main request is to create, rewrite, benchmark, or optimize a skill itself, [skill-creator](https://github.com/search?q=evoscientist-skill-creator&type=repositories) is the better fit.
 
 ## What This Skill Does
 
-This skill helps design AI workflows that can be reused, inspected, and improved over time. It is built for prompt pipelines, local LLM setups, tool-using agents, workflow decomposition, and deciding when something should become a skill, script, or MCP server.
+This skill helps design AI workflows that can be reused, inspected, and improved over time. It is built for prompt pipelines, tool-using agents, workflow decomposition, and deciding when something should become a prompt stack, script, or MCP server once the stack direction is already clear.
 
 ## Best For
 
@@ -42,6 +42,9 @@ Typical outputs:
 ## Non-goals
 
 This skill is not aimed at:
+- creating or benchmarking a skill artifact itself
+- optimizing skill triggering or skill packaging
+- local model-stack choice or hardware-first deployment decisions
 - one-off content generation only
 - generic code fixes unrelated to AI workflows
 - UI polish or presentation deliverables
@@ -53,6 +56,12 @@ This skill is not aimed at:
 - `Should this be a skill, a script, or an MCP server?`
 - `Design an eval loop for this agent workflow.`
 - `Map inputs, tools, outputs, and failure checks for this AI task.`
+
+## Routing Notes
+
+- Use this skill after the stack direction is already mostly known.
+- If the main task becomes "create a skill", "improve this skill", or "benchmark this skill", route to `skill-creator`.
+- If the main task is "LM Studio vs Ollama vs MLX" or other local stack tradeoffs, route to `local-ai-systems-studio`.
 
 ## Repository Structure
 

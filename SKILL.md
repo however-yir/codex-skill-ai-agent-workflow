@@ -1,6 +1,6 @@
 ---
 name: ai-agent-workflow
-description: "Use when designing or improving AI engineering workflows after the stack direction is already mostly known. Covers prompt pipelines, MCP integrations, tool-using agents, reusable skills, evaluation loops, and workflow decomposition. Trigger this for agent architecture, prompt refinement, tool grounding, workflow design, and turning repeatable AI tasks into durable systems. If the main question is local model selection, deployment path, or LM Studio versus Ollama versus MLX, use local-ai-systems-studio instead."
+description: "Use when designing or improving AI engineering workflows after the stack direction is already mostly known. Covers prompt pipelines, MCP integrations, tool-using agents, reusable workflow specs, evaluation loops, and workflow decomposition. Trigger this for agent architecture, prompt refinement, tool grounding, workflow design, and turning repeatable AI tasks into durable systems. If the main question is local model selection, deployment path, or LM Studio versus Ollama versus MLX, use local-ai-systems-studio instead. If the main request is to create, rewrite, benchmark, or improve a skill itself, use skill-creator instead even when the skill is AI-related."
 ---
 
 # AI Agent Workflow
@@ -33,6 +33,8 @@ Strong outputs from this skill usually include one or more of:
 This skill is not the best fit for:
 - choosing between local deployment stacks such as MLX, GGUF, LM Studio, Ollama, or vLLM
 - hardware-first local LLM decisions or local serving setup questions
+- creating a new skill from scratch or rewriting the skill artifact itself
+- benchmarking a skill, improving skill triggering, or building a skill eval harness
 - one-off content writing with no reusable workflow need
 - generic code fixes unrelated to AI systems or tooling
 - visual design, portfolio packaging, or office-document polish
@@ -60,6 +62,7 @@ Decide whether the problem is best solved by:
 - a small script or automation
 
 If the decision is still mainly about local stack choice, deployment path, or hardware fit, hand the problem to `local-ai-systems-studio` first.
+If the user is explicitly asking to author, package, validate, benchmark, or optimize a skill, hand the task to `skill-creator` instead of keeping it here.
 
 3. Keep the workflow explicit.
 Spell out:
@@ -98,6 +101,7 @@ Good use of this skill:
 - compare control surfaces honestly
 - optimize for reuse, tool access, and maintenance cost
 - recommend the smallest durable abstraction that solves the real problem
+- stop and switch to `skill-creator` if the next concrete ask becomes "write the skill" or "evaluate the skill itself"
 
 ### Example 3: Evaluation loop
 User request:
@@ -113,7 +117,8 @@ Good use of this skill:
 Use these when appropriate:
 - `local-ai-systems-studio` when the main question is local model choice, deployment path, or hardware-to-stack fit
 - `mcp-server-builder` for real tool integration
-- `skill-creator` and `skill-reviewer` for reusable workflow packaging
+- `skill-creator` when the request becomes "turn this into a skill", "improve this skill", or "benchmark this skill"
+- `skill-reviewer` for reviewing an already-written skill against best practices
 - `skills-search` before building from scratch
 - `prompt-optimizer` for prompt quality work
 - `deep-research` when the workflow depends on structured external knowledge
@@ -126,6 +131,11 @@ Common requests that should trigger this skill:
 - "Should this be a skill, prompt, script, or MCP server?"
 - "Make this AI task reusable"
 - "Design an eval loop for this workflow"
+
+Requests that should usually go somewhere else:
+- "Create a skill for this workflow" -> `skill-creator`
+- "Benchmark or improve this skill" -> `skill-creator`
+- "Help me choose between LM Studio and Ollama" -> `local-ai-systems-studio`
 
 ## Reference
 

@@ -1,5 +1,10 @@
 # ai-agent-workflow
 
+[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827?style=flat-square)](./SKILL.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](./LICENSE)
+[![Public Repo](https://img.shields.io/badge/Repo-Public-2563eb?style=flat-square)](https://github.com/however-yir/codex-skill-ai-agent-workflow)
+[![Last Commit](https://img.shields.io/github/last-commit/however-yir/codex-skill-ai-agent-workflow?style=flat-square)](https://github.com/however-yir/codex-skill-ai-agent-workflow/commits/main)
+
 > Repeatable AI workflows with prompts, tools, MCP integrations, and evaluation loops.
 
 中文简介：这是一个面向 AI 工作流设计的 Codex skill，适合把一次性提示词任务沉淀成可复用的 prompts、tools、MCP 集成和评测闭环。

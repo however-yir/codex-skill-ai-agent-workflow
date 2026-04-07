@@ -1,119 +1,162 @@
-# ai-agent-workflow
+# codex-skill-ai-agent-workflow
 
-🔥 A Codex skill for building repeatable AI agent workflows with prompts, tools, and MCP integrations.  
-🚀 Designed for workflow decomposition, tool grounding, evaluation loops, and reusable execution specs.  
-⭐ Helps teams move from one-off prompts to production-minded agent systems.
+这是 **codex-skill-ai-agent-workflow** 的中文说明文档。
 
-[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827?style=flat-square)](./SKILL.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](./LICENSE)
-[![Public Repo](https://img.shields.io/badge/Repo-Public-2563eb?style=flat-square)](https://github.com/however-yir/codex-skill-ai-agent-workflow)
-[![Last Commit](https://img.shields.io/github/last-commit/however-yir/codex-skill-ai-agent-workflow?style=flat-square)](https://github.com/however-yir/codex-skill-ai-agent-workflow/commits/main)
+本项目提供 AI 工程工作流技能模板，覆盖任务拆解、工具调用、评估闭环与可复用流程。
+该仓库以技能文档与示例为核心，不追求重型运行时，而强调可复用方法论与落地模板。
 
-> Repeatable AI workflows with prompts, tools, MCP integrations, and evaluation loops.
+## 目录
 
-中文简介：这是一个面向 AI 工作流设计的 Codex skill，适合把一次性提示词任务沉淀成可复用的 prompts、tools、MCP 集成和评测闭环。
+- [1. 项目概述](#1-项目概述)
+- [2. 目标与使用场景](#2-目标与使用场景)
+- [3. 功能与能力边界](#3-功能与能力边界)
+- [4. 技术栈与依赖](#4-技术栈与依赖)
+- [5. 仓库结构说明](#5-仓库结构说明)
+- [6. 快速开始](#6-快速开始)
+- [7. 配置与环境建议](#7-配置与环境建议)
+- [8. 开发与测试流程](#8-开发与测试流程)
+- [9. 发布与协作规范](#9-发布与协作规范)
+- [10. 路线图建议](#10-路线图建议)
+- [11. 贡献指南](#11-贡献指南)
+- [12. License](#12-license)
 
-A Codex skill for turning one-off AI ideas into repeatable workflows with prompts, tools, MCP integrations, checks, and evaluation loops.
+## 1. 项目概述
 
-Use this when the main stack direction is already mostly known. If the bigger question is still local model choice, deployment path, or LM Studio versus Ollama versus MLX, [local-ai-systems-studio](https://github.com/however-yir/codex-skill-local-ai-systems-studio) is the better first stop. If the main request is to create, rewrite, benchmark, or optimize a skill itself, [skill-creator](https://github.com/search?q=evoscientist-skill-creator&type=repositories) is the better fit.
+本仓库面向真实工程场景构建，重点强调以下原则：
 
-## What This Skill Does
+- 文档可读：便于团队快速理解上下文与边界。
+- 结构清晰：模块职责明确，便于多人协作。
+- 演进友好：支持持续迭代与版本化管理。
 
-This skill helps design AI workflows that can be reused, inspected, and improved over time. It is built for prompt pipelines, tool-using agents, workflow decomposition, and deciding when something should become a prompt stack, script, or MCP server once the stack direction is already clear.
+## 2. 目标与使用场景
 
-## Best For
+本仓库适用于以下场景：
 
-- prompt pipeline design
-- local LLM workflows
-- MCP integration planning
-- skill vs script vs tool decisions
-- evaluation loop design
-- reusable AI task packaging
+- 作为业务功能开发与验证的工程基座。
+- 作为团队内部的能力沉淀与知识共享仓库。
+- 作为二次开发与集成扩展的起点。
 
-## Inputs
+## 3. 功能与能力边界
 
-Typical inputs:
-- the repeatable task to solve
-- any current prompt, script, or workflow draft
-- available tools or MCP servers
-- model constraints
-- quality expectations and failure modes
+当前重点能力包括：
+- 提供标准化技能说明、示例与参考资料。
+- 支持按场景复用与按团队规范扩展。
+- 具备低成本维护与快速迭代能力。
 
-## Outputs
+当前边界说明：
 
-Typical outputs:
-- workflow specification
-- prompt or prompt-stack design
-- tool integration plan
-- eval loop or rubric
-- minimal implementation path
+- 优先保证主流程稳定与可维护。
+- 复杂能力按模块扩展，不在单次迭代中堆叠过多变更。
+- 所有新增功能建议配套文档与测试。
 
-## Non-goals
+## 4. 技术栈与依赖
 
-This skill is not aimed at:
-- creating or benchmarking a skill artifact itself
-- optimizing skill triggering or skill packaging
-- local model-stack choice or hardware-first deployment decisions
-- one-off content generation only
-- generic code fixes unrelated to AI workflows
-- UI polish or presentation deliverables
-- unstructured AI hype with no operating model
+当前仓库可识别的技术栈如下：
+- Skill 文档规范
 
-## Example Prompts
+依赖管理建议：
 
-- `Help me turn this local LLM document workflow into something reusable.`
-- `Should this be a skill, a script, or an MCP server?`
-- `Design an eval loop for this agent workflow.`
-- `Map inputs, tools, outputs, and failure checks for this AI task.`
+- 锁定关键依赖版本，避免隐性升级带来的回归风险。
+- 在 CI 中增加基础构建与测试校验。
+- 新增第三方依赖时，补充用途说明与安全评估。
 
-## Routing Notes
+## 5. 仓库结构说明
 
-- Use this skill after the stack direction is already mostly known.
-- If the main task becomes "create a skill", "improve this skill", or "benchmark this skill", route to `skill-creator`.
-- If the main task is "LM Studio vs Ollama vs MLX" or other local stack tradeoffs, route to `local-ai-systems-studio`.
+建议优先阅读以下路径：
 
-## Repository Structure
+- \：项目整体说明与入口。
+- \ 或同类目录：架构、规范、部署、FAQ 等。
+- 业务源码目录：按仓库实际模块组织查看。
 
-```text
-.
-├── .gitignore
-├── LICENSE
-├── README.md
-├── SKILL.md
-├── assets/
-│   └── .gitkeep
-├── examples/
-│   └── showcase.md
-├── references/
-│   └── checklist.md
-└── scripts/
-    └── .gitkeep
+如需长期维护，建议保持以下约束：
+
+- 公共能力下沉为共享模块。
+- 场景能力通过独立目录隔离。
+- 配置、脚本、文档三者保持一致更新。
+
+## 6. 快速开始
+
+1. 克隆仓库：
+
+\\\
+
+2. 按项目类型安装依赖并启动：
+
+```bash
+# 通用步骤（按仓库脚本调整）
+# 1) 阅读 README 与 docs
+# 2) 按依赖文件安装环境
+# 3) 运行项目自带启动/测试脚本
 ```
 
-## Showcase Examples
+3. 首次运行建议先执行最小验证：
 
-See [examples/showcase.md](./examples/showcase.md) for three stronger, public-facing examples that highlight workflow design, reuse, and evaluation.
+- 能否完成依赖安装。
+- 能否成功启动核心流程。
+- 能否通过基础测试或静态检查。
 
-## Included Files
+## 7. 配置与环境建议
 
-- [SKILL.md](./SKILL.md): trigger logic, workflow, examples, and pairing guidance
-- [examples/showcase.md](./examples/showcase.md): display-ready examples for public presentation
-- [references/checklist.md](./references/checklist.md): compact workflow design checklist
-- [LICENSE](./LICENSE): MIT license for standalone publication
+建议将环境配置分为三层：
 
-## Pair Well With
+- 本地开发（dev）
+- 集成联调（staging）
+- 生产发布（prod）
 
-- `mcp-server-builder`
-- `skill-creator`
-- `skill-reviewer`
-- `skills-search`
-- `prompt-optimizer`
-- `deep-research`
+推荐做法：
 
-## License
+- 使用 \ 或样例配置文件管理参数模板。
+- 将密钥、令牌、账号等敏感信息放入环境变量或密钥管理系统。
+- 对数据库、缓存、外部 API 地址使用可切换配置。
 
-Released under the MIT License. See [LICENSE](./LICENSE).
+## 8. 开发与测试流程
 
-## Notes
+推荐工作流：
 
-This skill is built to reduce ambiguity. The goal is not to make AI work sound impressive, but to make it repeatable and testable.
+1. 基于默认分支创建功能分支。
+2. 小步提交，确保每次提交目标明确。
+3. 本地完成构建与测试后再推送。
+4. 通过 Pull Request 完成评审与合并。
+
+测试建议：
+
+- 单元测试覆盖核心业务逻辑。
+- 集成测试覆盖关键接口与主流程。
+- 对高风险改动补充回归用例。
+
+## 9. 发布与协作规范
+
+发布建议：
+
+- 使用语义化版本（如 \）。
+- 在发布说明中明确新增、修复与不兼容变更。
+- 关键发布前执行一次完整回归。
+
+协作建议：
+
+- 需求、设计、代码、测试保持同频更新。
+- 重大改动先在文档中定义边界再实施。
+- 统一 issue / PR 模板，降低沟通成本。
+
+## 10. 路线图建议
+
+可按以下顺序推进：
+
+1. 稳定主流程，补齐最小可观测性。
+2. 优化模块边界，降低耦合度。
+3. 提升自动化测试覆盖率。
+4. 完善部署与运维手册。
+5. 逐步引入性能优化与安全加固。
+
+## 11. 贡献指南
+
+欢迎以 Issue / PR 方式参与改进，建议提交时包含：
+
+- 变更背景与目标
+- 关键实现说明
+- 测试结果或验证步骤
+- 兼容性与风险评估
+
+## 12. License
+
+本仓库遵循当前项目中已有的 License 文件约定。
